@@ -88,67 +88,95 @@
 ///Javascript Operators Precedence////
 //////////////////////////////////////
 
-var now = 2019;
-var yearJohn = 1990;
-var fullAge = 18;
+// var now = 2019;
+// var yearJohn = 1990;
+// var fullAge = 18;
 
-var isFullAge = now - yearJohn >= fullAge; // true
-console.log(isFullAge)
+// var isFullAge = now - yearJohn >= fullAge; // true
+// console.log(isFullAge)
 
-// Grouping 
-var ageJohn = now - yearJohn;
-var ageMark = 35;
-var average = (ageJohn + ageMark) / 2;
-console.log(average);
+// // Grouping 
+// var ageJohn = now - yearJohn;
+// var ageMark = 35;
+// var average = (ageJohn + ageMark) / 2;
+// console.log(average);
 
-// Multiple Assignments
-var x, y;
-x = (3+ 5) * 4-6; // 8 * 4 -6 // 32 -6 // 26
-console.log(x);
+// // Multiple Assignments
+// var x, y;
+// x = (3+ 5) * 4-6; // 8 * 4 -6 // 32 -6 // 26
+// console.log(x);
 
-// Assignment Operators work from right to left
-// see resources page on javascript precedent
-var x, y;
-x = y = (3+ 5) * 4-6; // 8 * 4 -6 // 32 -6 // 26
-console.log(x, y);
-
-
-//////////////////////
-//////////////////////
-// More Operators ////
-//////////////////////
-//////////////////////
-
-// x = x * 2
-
-x *= 2;
-console.log(x)
-
-//////////////////////
-//Additional Operators
-//////////////////////
-x += 10;
-console.log(x)
-
-x += 1 // or we can also use x++
-console.log(x)
-
-x++; //Adds 1 unit to the variable that we are using 
-console.log(x)
-
-//////////////////////
-// Minus operators
-//////////////////////
-x -= 2;
-console.log(x)
+// // Assignment Operators work from right to left
+// // see resources page on javascript precedent
+// var x, y;
+// x = y = (3+ 5) * 4-6; // 8 * 4 -6 // 32 -6 // 26
+// console.log(x, y);
 
 
-x -= 1 // or we can also use x++
-console.log(x)
+// //////////////////////
+// //////////////////////
+// // More Operators ////
+// //////////////////////
+// //////////////////////
 
-x--; //Subtracts 1 unit to the variable that we are using
-console.log(x)
+// // x = x * 2
+
+// x *= 2;
+// console.log(x)
+
+// //////////////////////
+// //Additional Operators
+// //////////////////////
+// x += 10;
+// console.log(x);
+
+// x += 1 // or we can also use x++
+// console.log(x);
+
+// x++; //Adds 1 unit to the variable that we are using 
+// console.log(x);
+
+// //////////////////////
+// // Minus operators
+// //////////////////////
+// x -= 2;
+// console.log(x);
 
 
+// x -= 1 // or we can also use x++
+// console.log(x);
+
+// x--; //Subtracts 1 unit to the variable that we are using
+// console.log(x);
+
+////////////////////////////////////
+////////////////////////////////////
+/////// Coding Challenge #1 ////////
+////////////////////////////////////
+////////////////////////////////////
+
+
+var markHeight, markMass, johnHeight, johnMass
+
+markHeight = 1.90; //meters
+markMass = 69; //kg
+
+johnHeight = 1.98; // meters
+johnMass = 80; // Kg
+
+
+//var Bmi = mass / height * height = mass 
+
+var markBmi = markMass / (markHeight * markHeight) ;
+
+var johnBmi = johnMass / (johnHeight * johnHeight);
+
+
+console.log(johnBmi)
+
+// Asking whether Marks Bmi is higher
+
+var isMarkBmiHigher = markBmi > johnBmi
+console.log("Is Mark\'s BMI higher than John\'s? " + isMarkBmiHigher);
 
 
