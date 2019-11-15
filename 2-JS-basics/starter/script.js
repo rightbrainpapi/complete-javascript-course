@@ -187,48 +187,74 @@
 ////////////////////////////////////
 
 
-// if / else statements
+// // if / else statements
 
-var firstName = "John";
-var civilStatus = "single";
+// var firstName = "John";
+// var civilStatus = "single";
 
-// if (civilStatus === "married"){
+// // if (civilStatus === "married"){
+// //     console.log(firstName + " is married!")
+// // }else{
+// //     console.log(firstName + " will hopefully be married soon :)")
+// // }
+
+
+// var isMarried = true;
+// if (isMarried){
 //     console.log(firstName + " is married!")
 // }else{
 //     console.log(firstName + " will hopefully be married soon :)")
 // }
 
+// //////////////////////////////
+// //////////////////////////////
+// //Refactored coding challenge 
+// //////////////////////////////
+// //////////////////////////////
 
-var isMarried = true;
-if (isMarried){
-    console.log(firstName + " is married!")
-}else{
-    console.log(firstName + " will hopefully be married soon :)")
+// var markHeight, markMass, johnHeight, johnMass
+
+// markHeight = 1.90; //meters
+// markMass = 60; //kg
+
+// johnHeight = 1.98; // meters
+// johnMass = 80; // Kg
+
+
+// //var Bmi = mass / height * height = mass 
+
+// var markBmi = markMass / (markHeight * markHeight) ;
+
+// var johnBmi = johnMass / (johnHeight * johnHeight);
+
+// if (markBmi > johnBmi){
+//     console.log("Mark\'s BMI is heigher than John\'s BMI")
+// }else{
+//     console.log("John\'s BMI is heigher than Mark\'s BMI")
+// }
+
+
+// Boolean Logic
+
+
+var firstName = "John";
+var age = 16;
+
+if (age < 13){
+    console.log(firstName + " is a boy.");
+} else if (age >= 13 && age <= 20){
+    console.log(firstName + " is a teenager.")
+}
+else{
+    console.log(firstName + " is a man.");
 }
 
-//////////////////////////////
-//////////////////////////////
-//Refactored coding challenge 
-//////////////////////////////
-//////////////////////////////
-
-var markHeight, markMass, johnHeight, johnMass
-
-markHeight = 1.90; //meters
-markMass = 60; //kg
-
-johnHeight = 1.98; // meters
-johnMass = 80; // Kg
 
 
-//var Bmi = mass / height * height = mass 
+/////////////////////////////////
+/////////////////////////////////
+// Coding Challenge #2
+/////////////////////////////////
+/////////////////////////////////
 
-var markBmi = markMass / (markHeight * markHeight) ;
 
-var johnBmi = johnMass / (johnHeight * johnHeight);
-
-if (markBmi > johnBmi){
-    console.log("Mark\'s BMI is heigher than John\'s BMI")
-}else{
-    console.log("John\'s BMI is heigher than Mark\'s BMI")
-}
