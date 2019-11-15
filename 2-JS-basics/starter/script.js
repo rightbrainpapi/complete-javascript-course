@@ -29,7 +29,7 @@ var firstName = "John"
 var age =28;
 
 
-//Type Coercion
+//Type Coercion - Process of converting one value type to another
 console.log(firstName + " "+ age)
 
 
@@ -41,11 +41,12 @@ console.log(firstName + " is a " + age + " year old " + job + ". Is he married? 
 
 
 // Variable Mutation - Changing the value of a variable
-
 age = "twenty eight";
 job = "driver";
 
+// Using Alert
 alert(firstName + " is a " + age + " year old " + job + ". Is he married? " + isMarried)
 
-var lastName = prompt("What is his last Name?");
+//Using Promt 
+var lastName = prompt("What is his last name?");
 console.log(firstName + " " + lastName)
