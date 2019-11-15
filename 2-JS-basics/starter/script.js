@@ -156,10 +156,66 @@
 ////////////////////////////////////
 
 
+// var markHeight, markMass, johnHeight, johnMass
+
+// markHeight = 1.90; //meters
+// markMass = 69; //kg
+
+// johnHeight = 1.98; // meters
+// johnMass = 80; // Kg
+
+
+// //var Bmi = mass / height * height = mass 
+
+// var markBmi = markMass / (markHeight * markHeight) ;
+
+// var johnBmi = johnMass / (johnHeight * johnHeight);
+
+
+// console.log(johnBmi)
+
+// // Asking whether Marks Bmi is higher
+
+// var isMarkBmiHigher = markBmi > johnBmi
+// console.log("Is Mark\'s BMI higher than John\'s? " + isMarkBmiHigher);
+
+
+////////////////////////////////////
+////////////////////////////////////
+/////// Controll Structures/////////
+////////////////////////////////////
+////////////////////////////////////
+
+
+// if / else statements
+
+var firstName = "John";
+var civilStatus = "single";
+
+// if (civilStatus === "married"){
+//     console.log(firstName + " is married!")
+// }else{
+//     console.log(firstName + " will hopefully be married soon :)")
+// }
+
+
+var isMarried = true;
+if (isMarried){
+    console.log(firstName + " is married!")
+}else{
+    console.log(firstName + " will hopefully be married soon :)")
+}
+
+//////////////////////////////
+//////////////////////////////
+//Refactored coding challenge 
+//////////////////////////////
+//////////////////////////////
+
 var markHeight, markMass, johnHeight, johnMass
 
 markHeight = 1.90; //meters
-markMass = 69; //kg
+markMass = 60; //kg
 
 johnHeight = 1.98; // meters
 johnMass = 80; // Kg
@@ -171,12 +227,8 @@ var markBmi = markMass / (markHeight * markHeight) ;
 
 var johnBmi = johnMass / (johnHeight * johnHeight);
 
-
-console.log(johnBmi)
-
-// Asking whether Marks Bmi is higher
-
-var isMarkBmiHigher = markBmi > johnBmi
-console.log("Is Mark\'s BMI higher than John\'s? " + isMarkBmiHigher);
-
-
+if (markBmi > johnBmi){
+    console.log("Mark\'s BMI is heigher than John\'s BMI")
+}else{
+    console.log("John\'s BMI is heigher than Mark\'s BMI")
+}
