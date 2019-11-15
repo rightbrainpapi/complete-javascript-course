@@ -233,21 +233,54 @@
 //     console.log("John\'s BMI is heigher than Mark\'s BMI")
 // }
 
-
+//////////////////
+//////////////////
 // Boolean Logic
+/////////////////
+///////////////////
 
+// var firstName = "John";
+// var age = 16;
+
+// if (age < 13){
+//     console.log(firstName + " is a boy.");
+// } else if (age >= 13 && age <= 20){
+//     console.log(firstName + " is a teenager.")
+// }
+// else if (age >= 20 && age <= 30){
+//     console.log(firstName + " is a young man.");
+// }
+// else{
+//     console.log(firstName + " is a man")
+// }
+
+
+
+
+
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// Teranary Operators and Switch Statements
+////////////////////////////////////////////
+////////////////////////////////////////////
 
 var firstName = "John";
 var age = 16;
 
-if (age < 13){
-    console.log(firstName + " is a boy.");
-} else if (age >= 13 && age <= 20){
-    console.log(firstName + " is a teenager.")
-}
-else{
-    console.log(firstName + " is a man.");
-}
+
+
+// Called a terenary statement because there are threee
+// parts that interact with the operator
+// 1. condition 2. if block 3. else block
+
+age >= 18 ? console.log(firstName + " drinks beer.")
+: console.log(firstName + " drinks juice.");
+
+
+
+
+
 
 
 
