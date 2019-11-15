@@ -57,31 +57,98 @@
 ////Basic Javascript Operators////
 //////////////////////////////////
 
-var now, yearJohn, yearMark;
-var now = 2019
-var ageJohn = 29
-var ageMark = 33
+// var now, yearJohn, yearMark;
+// var now = 2019
+// var ageJohn = 29
+// var ageMark = 33
 
-// Math Operators 
-yearJohn = now - ageJohn;
-yearMark = now - ageMark;
-console.log(yearJohn);
-console.log(yearMark);
+// // Math Operators 
+// yearJohn = now - ageJohn;
+// yearMark = now - ageMark;
+// console.log(yearJohn);
+// console.log(yearMark);
 
 
-console.log(now + 2)
-console.log(now * 2)
-console.log(now / 10)
+// console.log(now + 2)
+// console.log(now * 2)
+// console.log(now / 10)
 
-// Logical Operators
-var johnOlder = ageJohn > ageMark;
-console.log(johnOlder);
+// // Logical Operators
+// var johnOlder = ageJohn > ageMark;
+// console.log(johnOlder);
 
-// typeof Operator
-console.log(typeof johnOlder);
-console.log(typeof "Mark is older than John");
-console.log(typeof ageJohn);
-console.log(typeof x)
+// // typeof Operator
+// console.log(typeof johnOlder);
+// console.log(typeof "Mark is older than John");
+// console.log(typeof ageJohn);
+// console.log(typeof x)
+
+
+//////////////////////////////////////
+///Javascript Operators Precedence////
+//////////////////////////////////////
+
+var now = 2019;
+var yearJohn = 1990;
+var fullAge = 18;
+
+var isFullAge = now - yearJohn >= fullAge; // true
+console.log(isFullAge)
+
+// Grouping 
+var ageJohn = now - yearJohn;
+var ageMark = 35;
+var average = (ageJohn + ageMark) / 2;
+console.log(average);
+
+// Multiple Assignments
+var x, y;
+x = (3+ 5) * 4-6; // 8 * 4 -6 // 32 -6 // 26
+console.log(x);
+
+// Assignment Operators work from right to left
+// see resources page on javascript precedent
+var x, y;
+x = y = (3+ 5) * 4-6; // 8 * 4 -6 // 32 -6 // 26
+console.log(x, y);
+
+
+//////////////////////
+//////////////////////
+// More Operators ////
+//////////////////////
+//////////////////////
+
+// x = x * 2
+
+x *= 2;
+console.log(x)
+
+//////////////////////
+//Additional Operators
+//////////////////////
+x += 10;
+console.log(x)
+
+x += 1 // or we can also use x++
+console.log(x)
+
+x++; //Adds 1 unit to the variable that we are using 
+console.log(x)
+
+//////////////////////
+// Minus operators
+//////////////////////
+x -= 2;
+console.log(x)
+
+
+x -= 1 // or we can also use x++
+console.log(x)
+
+x--; //Subtracts 1 unit to the variable that we are using
+console.log(x)
+
 
 
 
