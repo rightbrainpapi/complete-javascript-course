@@ -848,29 +848,29 @@
 ///////////////////////////////////////////////////
 // Which is the curly braches
 ///////////////////////////////////////////////////
-var john = {
-    firstName: "John",
-    lastName: "Smith",
-    birthYear: 1990,
-    family: ["Jane", "Mark", "Bob", "Emily"],
-    job: "teacher",
-    isMarried: false
+// var john = {
+//     firstName: "John",
+//     lastName: "Smith",
+//     birthYear: 1990,
+//     family: ["Jane", "Mark", "Bob", "Emily"],
+//     job: "teacher",
+//     isMarried: false
 
-};
+// };
 
-console.log(john);
+// console.log(john);
 
-// Accessing a element from an object
-console.log(john.firstName);
-// Accessing an element from an object
-console.log(john["lastName"])
+// // Accessing a element from an object
+// console.log(john.firstName);
+// // Accessing an element from an object
+// console.log(john["lastName"])
 
-// Yet another way
-var x = "birthYear"
-console.log(john[x])
-// When using this method notic that the 
-// variable x still contains the string birthYear
-console.log(x)
+// // Yet another way
+// var x = "birthYear"
+// console.log(john[x])
+// // When using this method notic that the 
+// // variable x still contains the string birthYear
+// console.log(x)
 
 
 //////////////////////////////////
@@ -879,9 +879,9 @@ console.log(x)
 // Change new key value pairs
 //////////////////////////////////
 
-john.job = "designer"
-john["isMarried"] = true;
-console.log(john)
+// john.job = "designer"
+// john["isMarried"] = true;
+// console.log(john)
 
 
 
@@ -893,45 +893,78 @@ console.log(john)
 // which is the new keyword
 ///////////////////////////////////////////
 
-var jane = new Object();
-jane.firstName = "Jane";
-jane.birthYear = 1969;
-jane.lastName = "Smith";
+// var jane = new Object();
+// jane.firstName = "Jane";
+// jane.birthYear = 1969;
+// jane.lastName = "Smith";
 
-console.log(jane)
-
-
-///////////////////////////////////////
-///////////////////////////////////////
-// End: JavaScript Objects & Properties
-///////////////////////////////////////
-///////////////////////////////////////
-
-
-
-
-
-
-
-
-/////////////////////////////////////////////
-/////////////////////////////////////////////
-// Beginning: JavaScript Objects & Properties
-/////////////////////////////////////////////
-/////////////////////////////////////////////
-
-
-
-
-
-
-
-
+// console.log(jane)
 
 
 ///////////////////////////////////////
 ///////////////////////////////////////
 // End: JavaScript Objects & Properties
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Beginning: JavaScript Objects & Methods
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Object methods are functions that are 
+// attached to an object
+/////////////////////////////////////////////
+// Objects have special this keywords that point to it's self
+/////////////////////////////////////////////
+
+
+
+var john = {
+    firstName: "John",
+    lastName: "Smith",
+    birthYear: 1992,
+    family: ["Jane", "Mark", "Bob", "Emily"],
+    job: "teacher",
+    isMarried: false,
+    // Here is the Object method
+    calcAge: function(){
+        //This keyword refers to the object that we are currently in which is John.
+        // Below: creating a new key value pair
+        // setting it to the sum of 2018 - john.birthYear
+        this.age = 2018 - this.birthYear;
+    }
+    
+};
+
+
+john.calcAge()
+
+// console.log(john.calcAge());
+
+// // Calculating the Age then creating 
+// // then calculating a new Key Value pair 
+// // to store in the john object
+// var age = john.calcAge();
+// john.age = age
+
+// // Alternative way to do the same thing.
+// // john.age = john.calcAge();
+
+console.log(john)
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+// End: JavaScript Objects & Methods
 ///////////////////////////////////////
 ///////////////////////////////////////
 
