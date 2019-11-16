@@ -990,49 +990,40 @@ console.log(john)
 
 
 var john = {
-    firstName: "John",
-    lastName: "Smith",
-    mass: 89, //kg
-    height: 1.98,
+    fullName: "John Smith",
+    mass: 92, //kg
+    height: 1.95,
     calcBMI: function(){
-        return    this.mass / (this.height * this.height );
-        }
-}
-
-var mark = {
-    firstName: "Mark",
-    lastName: "Greene",
-    mass: 69, //kg
-    height: 1.90,
-    calcBMI: function(){
-    return    this.mass / (this.height * this.height );
+        this.Bmi =  this.mass / (this.height * this.height );
+        return this.Bmi
     }
 }
 
-
-// console.log(mark.calcBMI())
-
-// var whoseBmiIsHigher = mark.calcBMI() > john.calcBMI() ? "Mark\'s BMI is Higher than John\'s." : "John\'s BMI is Higher than Mark\'s." ;
-// console.log(whoseBmiIsHigher)
-
+var mark = {
+    fullName: "Mark Greene",
+    mass: 78, //kg
+    height: 1.69,
+    calcBMI: function(){
+        this.Bmi =  this.mass / (this.height * this.height );
+        return this.Bmi
+    }
+}
 
 // Function Expression --> Does produce an  immediate results
 var whoseBmiIsHigher = function(){
     // Some Script
     if (mark.calcBMI() > john.calcBMI() && mark.calcBMI() != john.calcBMI()){
-        return("Mark\'s BMI is Higher than John\'s.")
+        return(mark.fullName + "'s BMI is Higher than Mark\'s. " + mark.fullName  + "'s Bmi is " + Math.round(10 * mark.Bmi) / 10  )
     } 
     
     else if (mark.calcBMI() < john.calcBMI() && mark.calcBMI() != john.calcBMI()) {
-        return("John\'s BMI is Higher than Mark\'s." )
+        return(john.fullName + "'s BMI is Higher than Mark\'s. " + john.fullName  + "'s Bmi is " + Math.round(10 * john.Bmi) / 10  )
     }
     else{
         return("They have the same BMI.")
     }
 }
 
-
-// whoseBmiIsHigher()
 
 console.log(whoseBmiIsHigher())
 
