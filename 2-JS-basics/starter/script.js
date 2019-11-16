@@ -481,28 +481,167 @@
 
 
 // Function Declaration --> Do not produce immediate results
-function whatDoYouDo(job, firstName){
-    // Some Script
-}
+// function whatDoYouDo(job, firstName){
+//     // Some Script
+// }
 
-// Function Expression --> Do not producean  immediate results
-var whatDoYouDo = function(job, firstName){
-    // Some Script
+// // Function Expression --> Does produce an  immediate results
+// var whatDoYouDo = function(job, firstName){
+//     // Some Script
 
-    switch (job){
-        case "teacher":
-            return firstName + " teaches kids how to code."
-        case "driver":
-            return firstName + " drives uber in lisbon."
+//     switch (job){
+//         case "teacher":
+//             return firstName + " teaches kids how to code."
+//         case "driver":
+//             return firstName + " drives uber in lisbon."
 
-        case "designer":
-            return firstName + " designes beautiful websites."
-        default:
-            return firstName + " does something else."
+//         case "designer":
+//             return firstName + " designes beautiful websites."
+//         default:
+//             return firstName + " does something else."
+//     }
+// }
+
+// console.log(whatDoYouDo("teacher", "John"));// Function Expression --> Does produce an  immediate results
+// console.log(whatDoYouDo("driver", "Jane"));
+// console.log(whatDoYouDo("retired", "Mark"));
+// console.log(whatDoYouDo("designer", "Mark"));
+
+// // Initialize New Array
+// var names = ["John", "Mark", "Jane"];
+// var years = new Array(1990, 1969, 1948);
+
+// console.log(names[2]);
+// console.log(names.length);
+
+// // Mutate Arry Data
+// names[names.length] = "Mary";
+// console.log(names);
+
+// // Different Data Types
+// var john = ["John", "Smith", 1990, "teacher", false];
+
+// // .push -->Add element to end
+// john.push("blue");
+// console.log(john)
+
+
+// // .unshift -->Add element to beginning
+// john.unshift("Mr.")
+// console.log(john)
+
+
+// // .pop --> remove element from the end
+// john.pop()
+// console.log(john)
+
+
+// // .shift --> remove element from the end
+// john.shift()
+// console.log(john)
+
+// // .indexOf --> returns the index of where the element exist
+// //useful for testing whether an element is in the array
+// console.log(john.indexOf(1990));
+
+// // Using a teranary wit index of to determin if john is a designer
+// var isDesigner = john.indexOf('designer') === -1 ? "John is Not a designer": "John is a Designer"
+
+// console.log(isDesigner);
+
+
+//////////////////////////////////////
+//////////////////////////////////////
+// Coding Challenge #3: Tip Calculator
+//////////////////////////////////////
+//////////////////////////////////////
+
+// John has 3 restaurant bills 12, 48, and 268
+
+// John likes to tip 
+// 20% when the bill is less than 50
+// 15% when the bill is equal to 50 but less than 200
+// 10% when the bill is equal to 200 or more
+
+
+
+////////////////////////////
+// First Solution
+////////////////////////////
+
+var bill = [124, 48, 268]
+var afterTip = []
+
+
+// Function Declaration --> Do not produce immediate results
+function tipCalculator(bill){
+
+    if (bill < 50) {
+       var tipAmount = (bill * 0.2);
+       afterTip.push(bill + tipAmount)
+        console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
     }
+    
+    else if (bill >= 50 && bill < 200 ){
+        var tipAmount = (bill * 0.15);
+        afterTip.push(bill + tipAmount)
+        console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+    }
+    else if (bill >= 200){
+        var tipAmount = (bill * 0.1);
+        afterTip.push(bill + tipAmount)
+        console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+    }
+    else{
+        console.log("the budget is to large")
+    }
+    
+}
+tipCalculator(bill[0])
+tipCalculator(bill[1])
+tipCalculator(bill[2])
+
+
+
+console.log("////////////");
+console.log("Old TIP CALCULATOR")
+console.log("////////////")
+console.log(bill)
+console.log(afterTip)
+
+
+////////////////////////////
+// Refactored Solution
+////////////////////////////
+var bill = [124, 48, 268]
+var afterTip = []
+
+function newTipCalculator(bill){
+    var percentage;
+    if(bill < 50){
+        percentage = .2;
+    } else if (bill >= 50 && bill <200){
+        percentage = .15;
+    } else if (bill >= 200){
+        percentage = .1;
+    }
+    else{
+        console.log("the budget is to large")
+    }
+    var tipAmount = (percentage * bill);
+    afterTip.push(bill + tipAmount);
+    console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+
 }
 
-console.log(whatDoYouDo("teacher", "John"));// Function Expression --> Do not producean  immediate results
-console.log(whatDoYouDo("driver", "Jane"));
-console.log(whatDoYouDo("retired", "Mark"));
-console.log(whatDoYouDo("designer", "Mark"));
+
+console.log("////////////");
+console.log("NEW TIP CALCULATOR")
+console.log("////////////")
+
+newTipCalculator(bill[0])
+newTipCalculator(bill[1])
+newTipCalculator(bill[2])
+
+console.log(bill)
+console.log(afterTip)
