@@ -412,38 +412,38 @@
 /////////////////////////////////
 
 
-function calculateAge(birthYear){
-return 2019 - birthYear;
-}
-var ageMike = calculateAge(1980);
-var ageJane = calculateAge(1999);
-var ageJohn = calculateAge(1990);
+// function calculateAge(birthYear){
+// return 2019 - birthYear;
+// }
+// var ageMike = calculateAge(1980);
+// var ageJane = calculateAge(1999);
+// var ageJohn = calculateAge(1990);
 
-console.log(ageJohn, ageMike, ageJane );
+// console.log(ageJohn, ageMike, ageJane );
 
-// Calculate the retirement date using the age info
+// // Calculate the retirement date using the age info
 
-function yearsUntilRetirement(year, firstName){
-// var age = calculateAge(year);
-    var retirement = 75 - year
+// function yearsUntilRetirement(year, firstName){
+// // var age = calculateAge(year);
+//     var retirement = 75 - year
 
-    if (retirement > 0 ){
-        return firstName + " can retire in " + (75 - year) + " years.";
-    }
-    else{
-       return  firstName + " has retired " + Math.abs(retirement) + " years ago.";
-    }
+//     if (retirement > 0 ){
+//         return firstName + " can retire in " + (75 - year) + " years.";
+//     }
+//     else{
+//        return  firstName + " has retired " + Math.abs(retirement) + " years ago.";
+//     }
 
 
 
    
 
-}
+// }
 
-var retireMike = yearsUntilRetirement(ageMike, "Mike")
+// var retireMike = yearsUntilRetirement(ageMike, "Mike")
 
-console.log("/////////")
-console.log( retireMike)
+// console.log("/////////")
+// console.log( retireMike)
 
 
 
@@ -471,3 +471,38 @@ console.log( retireMike)
 //     }
     
 //     var retireMike = yearsUntilRetirement(1980, "Mike")
+
+
+/////////////////////////////////
+/////////////////////////////////
+// Functions Expressions
+/////////////////////////////////
+/////////////////////////////////
+
+
+// Function Declaration --> Do not produce immediate results
+function whatDoYouDo(job, firstName){
+    // Some Script
+}
+
+// Function Expression --> Do not producean  immediate results
+var whatDoYouDo = function(job, firstName){
+    // Some Script
+
+    switch (job){
+        case "teacher":
+            return firstName + " teaches kids how to code."
+        case "driver":
+            return firstName + " drives uber in lisbon."
+
+        case "designer":
+            return firstName + " designes beautiful websites."
+        default:
+            return firstName + " does something else."
+    }
+}
+
+console.log(whatDoYouDo("teacher", "John"));// Function Expression --> Do not producean  immediate results
+console.log(whatDoYouDo("driver", "Jane"));
+console.log(whatDoYouDo("retired", "Mark"));
+console.log(whatDoYouDo("designer", "Mark"));
