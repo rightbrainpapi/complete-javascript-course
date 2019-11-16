@@ -980,3 +980,63 @@ console.log(john)
 // Coding Challenge #4: 
 //////////////////////////////////////
 //////////////////////////////////////
+
+
+
+// Create 2 Objects 1 for John 1 for mark
+// In each object include the following keys: full name, mas, and height
+// include a method that calculates the bmi then returns it.
+// finally calculate who has the greater bmi
+
+
+var john = {
+    firstName: "John",
+    lastName: "Smith",
+    mass: 89, //kg
+    height: 1.98,
+    calcBMI: function(){
+        return    this.mass / (this.height * this.height );
+        }
+}
+
+var mark = {
+    firstName: "Mark",
+    lastName: "Greene",
+    mass: 69, //kg
+    height: 1.90,
+    calcBMI: function(){
+    return    this.mass / (this.height * this.height );
+    }
+}
+
+
+// console.log(mark.calcBMI())
+
+// var whoseBmiIsHigher = mark.calcBMI() > john.calcBMI() ? "Mark\'s BMI is Higher than John\'s." : "John\'s BMI is Higher than Mark\'s." ;
+// console.log(whoseBmiIsHigher)
+
+
+// Function Expression --> Does produce an  immediate results
+var whoseBmiIsHigher = function(){
+    // Some Script
+    if (mark.calcBMI() > john.calcBMI() && mark.calcBMI() != john.calcBMI()){
+        return("Mark\'s BMI is Higher than John\'s.")
+    } 
+    
+    else if (mark.calcBMI() < john.calcBMI() && mark.calcBMI() != john.calcBMI()) {
+        return("John\'s BMI is Higher than Mark\'s." )
+    }
+    else{
+        return("They have the same BMI.")
+    }
+}
+
+
+// whoseBmiIsHigher()
+
+console.log(whoseBmiIsHigher())
+
+
+
+
+
