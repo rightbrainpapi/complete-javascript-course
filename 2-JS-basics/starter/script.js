@@ -389,17 +389,17 @@ var marysTeamAverage = (97 + 134 + 105) / 3;
 
 switch(true){
     case johnsTeamAverage > mikesTeamAverage && johnsTeamAverage > marysTeamAverage:
-        console.log("John\'s team has a higher winning average.");
+        console.log("John\'s team has a higher winning average with " + johnsTeamAverage + " points");
         break;
     case johnsTeamAverage < mikesTeamAverage && mikesTeamAverage > marysTeamAverage:
-        console.log("Mike\'s team has a higher winning average.");
+        console.log("Mike\'s team has a higher winning average with " + mikesTeamAverage + " points");
         break;
     case johnsTeamAverage < marysTeamAverage && marysTeamAverage > mikesTeamAverage:
-        console.log("Mary\'s team has a higher winning average.");
+        console.log("Mary\'s team has a higher winning average with " + marysTeamAverage + " points");
         break;
     case johnsTeamAverage === mikesTeamAverage && johnsTeamAverage === marysTeamAverage:
-        console.log("Mary, Mike, and John\'s team have the same winning average.");
+        console.log("Mary, Mike, and John\'s team have the same winning average with " + marysTeamAverage + " points");
         break;
     default:
-        console.log("We are still working on calculating.");
+        console.log("We can not determine the average.");
 }
