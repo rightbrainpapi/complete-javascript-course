@@ -265,8 +265,8 @@
 ////////////////////////////////////////////
 ////////////////////////////////////////////
 
-var firstName = "John";
-var age = 16;
+// var firstName = "John";
+// var age = 16;
 
 
 
@@ -276,13 +276,13 @@ var age = 16;
 // parts that interact with the operator
 // 1. condition separated by a ?  2. if block separated by : 3. then the else block ended with ;
 
-age >= 18 ? console.log(firstName + " drinks beer.")
-: console.log(firstName + " drinks juice.");
+// age >= 18 ? console.log(firstName + " drinks beer.")
+// : console.log(firstName + " drinks juice.");
 
 
-var drink = age >= 18 ? "beer" : "juice";
+// var drink = age >= 18 ? "beer" : "juice";
 
-console.log(firstName + " drinks " + drink + ".")
+// console.log(firstName + " drinks " + drink + ".")
 
 
 //The if else statement is the same as writing the teranany statment above.
@@ -299,48 +299,48 @@ console.log(firstName + " drinks " + drink + ".")
 ////////////////////////////////////////////
 // Switch Statements
 
-var job = "instructor";
-switch (job){
-    // If job is equal to teacher the program executes this piece of code
-    case "teacher":
-        //we can have multiple case clauses for the same piece of code 
-    case "instructor":
-        console.log(firstName + " teachers kids how to code.");
-        break;
-    // If the job is equal to driver the program executes this piece of code
-    case "driver":
-        console.log(firstName + " drives an uber in Lisbon.");
-        break;
-            // If the job is equal to driver the program executes this piece of code
-    case "designer":
-        console.log(firstName + " designs beautiful websites.");
-        break;
-    //////////////////
-    // If none of the cases apply default to the below 
-    default:
-        console.log(firstName + " does something else.");
+// var job = "instructor";
+// switch (job){
+//     // If job is equal to teacher the program executes this piece of code
+//     case "teacher":
+//         //we can have multiple case clauses for the same piece of code 
+//     case "instructor":
+//         console.log(firstName + " teachers kids how to code.");
+//         break;
+//     // If the job is equal to driver the program executes this piece of code
+//     case "driver":
+//         console.log(firstName + " drives an uber in Lisbon.");
+//         break;
+//             // If the job is equal to driver the program executes this piece of code
+//     case "designer":
+//         console.log(firstName + " designs beautiful websites.");
+//         break;
+//     //////////////////
+//     // If none of the cases apply default to the below 
+//     default:
+//         console.log(firstName + " does something else.");
 
-}
+// }
 
 
 
-// Refactored exercise from Boolean logic above
+// // Refactored exercise from Boolean logic above
 
-age = 100
+// age = 100
 
-switch(true){
-    case age < 13:
-        console.log(firstName + " is a boy.");
-        break;
-    case age >= 13 && age <= 20:
-        console.log(firstName + " is a teenager.");
-        break;
-    case age >= 20 && age <= 30:
-        console.log(firstName + " is a young man.");
-        break;
-    default: 
-        console.log(firstName + " is a man.");
-}
+// switch(true){
+//     case age < 13:
+//         console.log(firstName + " is a boy.");
+//         break;
+//     case age >= 13 && age <= 20:
+//         console.log(firstName + " is a teenager.");
+//         break;
+//     case age >= 20 && age <= 30:
+//         console.log(firstName + " is a young man.");
+//         break;
+//     default: 
+//         console.log(firstName + " is a man.");
+// }
 
 
 
@@ -360,11 +360,11 @@ switch(true){
 
 ///////////////////////////
 // Equality operator ==
-var height = 23;
-// The == takes "23" which is a string and converts it to a number then compares it with the variable height which is a number   
-if (height == "23"){
-    console.log("The == operator does type coercion!");
-}
+// var height = 23;
+// // The == takes "23" which is a string and converts it to a number then compares it with the variable height which is a number   
+// if (height == "23"){
+//     console.log("The == operator does type coercion!");
+// }
 
 
 
@@ -375,4 +375,31 @@ if (height == "23"){
 /////////////////////////////////
 /////////////////////////////////
 
+// Calculate the average schore of two teams and see which team has the highest score.
+// Johns team: 89 120 103 
+// Mikes team: 116 94 123
 
+// calculating the average
+
+
+var johnsTeamAverage = (89 + 120 + 103) / 3;
+var mikesTeamAverage = (116 + 94 + 123) / 3;
+var marysTeamAverage = (97 + 134 + 105) / 3;
+
+
+switch(true){
+    case johnsTeamAverage > mikesTeamAverage && johnsTeamAverage > marysTeamAverage:
+        console.log("John\'s team has a higher winning average.");
+        break;
+    case johnsTeamAverage < mikesTeamAverage && mikesTeamAverage > marysTeamAverage:
+        console.log("Mike\'s team has a higher winning average.");
+        break;
+    case johnsTeamAverage < marysTeamAverage && marysTeamAverage > mikesTeamAverage:
+        console.log("Mary\'s team has a higher winning average.");
+        break;
+    case johnsTeamAverage === mikesTeamAverage && johnsTeamAverage === marysTeamAverage:
+        console.log("Mary, Mike, and John\'s team have the same winning average.");
+        break;
+    default:
+        console.log("We are still working on calculating.");
+}
