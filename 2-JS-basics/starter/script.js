@@ -245,7 +245,7 @@
 // if (age < 13){
 //     console.log(firstName + " is a boy.");
 // } else if (age >= 13 && age <= 20){
-//     console.log(firstName + " is a teenager.")
+//     console.log(firstName + " is a teenager.");
 // }
 // else if (age >= 20 && age <= 30){
 //     console.log(firstName + " is a young man.");
@@ -270,16 +270,101 @@ var age = 16;
 
 
 
+////////////////////////////////////////////
+// Teranary Operator 
 // Called a terenary statement because there are threee
 // parts that interact with the operator
-// 1. condition 2. if block 3. else block
+// 1. condition separated by a ?  2. if block separated by : 3. then the else block ended with ;
 
 age >= 18 ? console.log(firstName + " drinks beer.")
 : console.log(firstName + " drinks juice.");
 
 
+var drink = age >= 18 ? "beer" : "juice";
+
+console.log(firstName + " drinks " + drink + ".")
 
 
+//The if else statement is the same as writing the teranany statment above.
+// if (age>=18){ 
+//     var drink = "beer";
+// }else{
+//     var drink = "juice";
+// }
+
+
+
+
+
+////////////////////////////////////////////
+// Switch Statements
+
+var job = "instructor";
+switch (job){
+    // If job is equal to teacher the program executes this piece of code
+    case "teacher":
+        //we can have multiple case clauses for the same piece of code 
+    case "instructor":
+        console.log(firstName + " teachers kids how to code.");
+        break;
+    // If the job is equal to driver the program executes this piece of code
+    case "driver":
+        console.log(firstName + " drives an uber in Lisbon.");
+        break;
+            // If the job is equal to driver the program executes this piece of code
+    case "designer":
+        console.log(firstName + " designs beautiful websites.");
+        break;
+    //////////////////
+    // If none of the cases apply default to the below 
+    default:
+        console.log(firstName + " does something else.");
+
+}
+
+
+
+// Refactored exercise from Boolean logic above
+
+age = 100
+
+switch(true){
+    case age < 13:
+        console.log(firstName + " is a boy.");
+        break;
+    case age >= 13 && age <= 20:
+        console.log(firstName + " is a teenager.");
+        break;
+    case age >= 20 && age <= 30:
+        console.log(firstName + " is a young man.");
+        break;
+    default: 
+        console.log(firstName + " is a man.");
+}
+
+
+
+// falsy values: undefined, null, 0, " ", NaN, 
+// truthy values: NOT falsy values
+
+// If you define a variable as 0 it will render undefined
+// var height = 23;
+
+// height = 0;
+// if (height || height === 0 ){
+//     console.log('Variable is defined');
+// }else{
+//     console.log('Variable has not been defined');
+// }
+
+
+///////////////////////////
+// Equality operator ==
+var height = 23;
+// The == takes "23" which is a string and converts it to a number then compares it with the variable height which is a number   
+if (height == "23"){
+    console.log("The == operator does type coercion!");
+}
 
 
 
