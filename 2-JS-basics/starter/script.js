@@ -1,6 +1,9 @@
 /////////////////////////////////
+/////////////////////////////////
 ///////Variable & Data Types/////
 /////////////////////////////////
+/////////////////////////////////
+
 
 // var firstName = "John";
 // console.log(firstName)
@@ -22,9 +25,21 @@
 // job = 'teachers'
 // console.log(job);
 
+
+
+
+
+
+
+
+
+//////////////////////////////////
 //////////////////////////////////
 //Variable Mutation & Coercion////
 //////////////////////////////////
+//////////////////////////////////
+
+
 // var firstName = "John"
 // var age =28;
 
@@ -53,9 +68,18 @@
 
 
 
+
+
+
+
+
+
+
+//////////////////////////////////
 //////////////////////////////////
 ////Basic Javascript Operators////
 //////////////////////////////////
+/////////////////////////////////
 
 // var now, yearJohn, yearMark;
 // var now = 2019
@@ -84,8 +108,16 @@
 // console.log(typeof x)
 
 
+
+
+
+
+
+
+//////////////////////////////////////
 //////////////////////////////////////
 ///Javascript Operators Precedence////
+//////////////////////////////////////
 //////////////////////////////////////
 
 // var now = 2019;
@@ -111,6 +143,20 @@
 // var x, y;
 // x = y = (3+ 5) * 4-6; // 8 * 4 -6 // 32 -6 // 26
 // console.log(x, y);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // //////////////////////
@@ -149,6 +195,20 @@
 // x--; //Subtracts 1 unit to the variable that we are using
 // console.log(x);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////
 ////////////////////////////////////
 /////// Coding Challenge #1 ////////
@@ -180,6 +240,22 @@
 // console.log("Is Mark\'s BMI higher than John\'s? " + isMarkBmiHigher);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////
 ////////////////////////////////////
 /////// Controll Structures/////////
@@ -205,6 +281,21 @@
 // }else{
 //     console.log(firstName + " will hopefully be married soon :)")
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // //////////////////////////////
 // //////////////////////////////
@@ -233,11 +324,21 @@
 //     console.log("John\'s BMI is heigher than Mark\'s BMI")
 // }
 
-//////////////////
-//////////////////
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////
+/////////////////////////////////
 // Boolean Logic
-/////////////////
-///////////////////
+/////////////////////////////////
+/////////////////////////////////
 
 // var firstName = "John";
 // var age = 16;
@@ -259,22 +360,34 @@
 
 
 
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////
 ////////////////////////////////////////////
 // Teranary Operators and Switch Statements
 ////////////////////////////////////////////
 ////////////////////////////////////////////
 
-// var firstName = "John";
-// var age = 16;
 
-
-
-////////////////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
 // Teranary Operator 
+/////////////////////////////////
+/////////////////////////////////
 // Called a terenary statement because there are threee
 // parts that interact with the operator
 // 1. condition separated by a ?  2. if block separated by : 3. then the else block ended with ;
+/////////////////////////////////
+/////////////////////////////////
+
+// var firstName = "John";
+// var age = 16;
 
 // age >= 18 ? console.log(firstName + " drinks beer.")
 // : console.log(firstName + " drinks juice.");
@@ -296,8 +409,11 @@
 
 
 
-////////////////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
 // Switch Statements
+/////////////////////////////////
+/////////////////////////////////
 
 // var job = "instructor";
 // switch (job){
@@ -369,6 +485,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /////////////////////////////////
 /////////////////////////////////
 // Coding Challenge #2
@@ -405,6 +536,18 @@
 // }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /////////////////////////////////
 /////////////////////////////////
 // Functions
@@ -434,10 +577,6 @@
 //        return  firstName + " has retired " + Math.abs(retirement) + " years ago.";
 //     }
 
-
-
-   
-
 // }
 
 // var retireMike = yearsUntilRetirement(ageMike, "Mike")
@@ -447,11 +586,12 @@
 
 
 
-//////////////
-//////////////
-// Another way to solve the same problem
-//////////////
-//////////////
+/////////////////////////////////
+/////////////////////////////////
+// Refactored Solution
+/////////////////////////////////
+/////////////////////////////////
+
 // function calculateAge(birthYear){
 //     return 2019 - birthYear;
 //     }
@@ -471,6 +611,16 @@
 //     }
     
 //     var retireMike = yearsUntilRetirement(1980, "Mike")
+
+
+
+
+
+
+
+
+
+
 
 
 /////////////////////////////////
@@ -507,7 +657,21 @@
 // console.log(whatDoYouDo("retired", "Mark"));
 // console.log(whatDoYouDo("designer", "Mark"));
 
-// // Initialize New Array
+
+
+
+
+
+///////////////////////////////
+///////////////////////////////
+////////JavaScript Arrays//////
+///////////////////////////////
+///////////////////////////////
+// Order matters in an array
+///////////////////////////////
+
+
+
 // var names = ["John", "Mark", "Jane"];
 // var years = new Array(1990, 1969, 1948);
 
@@ -550,6 +714,20 @@
 // console.log(isDesigner);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////////////
 //////////////////////////////////////
 // Coding Challenge #3: Tip Calculator
@@ -569,79 +747,203 @@
 // First Solution
 ////////////////////////////
 
-var bill = [124, 48, 268]
-var afterTip = []
+
+// var bill = [124, 48, 268]
+// var afterTip = []
 
 
-// Function Declaration --> Do not produce immediate results
-function tipCalculator(bill){
+// // Function Declaration --> Do not produce immediate results
+// function tipCalculator(bill){
 
-    if (bill < 50) {
-       var tipAmount = (bill * 0.2);
-       afterTip.push(bill + tipAmount)
-        console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
-    }
+//     if (bill < 50) {
+//        var tipAmount = (bill * 0.2);
+//        afterTip.push(bill + tipAmount)
+//         console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+//     }
     
-    else if (bill >= 50 && bill < 200 ){
-        var tipAmount = (bill * 0.15);
-        afterTip.push(bill + tipAmount)
-        console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
-    }
-    else if (bill >= 200){
-        var tipAmount = (bill * 0.1);
-        afterTip.push(bill + tipAmount)
-        console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
-    }
-    else{
-        console.log("the budget is to large")
-    }
+//     else if (bill >= 50 && bill < 200 ){
+//         var tipAmount = (bill * 0.15);
+//         afterTip.push(bill + tipAmount)
+//         console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+//     }
+//     else if (bill >= 200){
+//         var tipAmount = (bill * 0.1);
+//         afterTip.push(bill + tipAmount)
+//         console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+//     }
+//     else{
+//         console.log("the budget is to large")
+//     }
     
-}
-tipCalculator(bill[0])
-tipCalculator(bill[1])
-tipCalculator(bill[2])
+// }
+// tipCalculator(bill[0])
+// tipCalculator(bill[1])
+// tipCalculator(bill[2])
 
 
 
-console.log("////////////");
-console.log("Old TIP CALCULATOR")
-console.log("////////////")
-console.log(bill)
-console.log(afterTip)
+// console.log("////////////");
+// console.log("Old TIP CALCULATOR")
+// console.log("////////////")
+// console.log(bill)
+// console.log(afterTip)
 
 
-////////////////////////////
-// Refactored Solution
-////////////////////////////
-var bill = [124, 48, 268]
-var afterTip = []
-
-function newTipCalculator(bill){
-    var percentage;
-    if(bill < 50){
-        percentage = .2;
-    } else if (bill >= 50 && bill <200){
-        percentage = .15;
-    } else if (bill >= 200){
-        percentage = .1;
-    }
-    else{
-        console.log("the budget is to large")
-    }
-    var tipAmount = (percentage * bill);
-    afterTip.push(bill + tipAmount);
-    console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
-
-}
+// ////////////////////////////
+// // Refactored Solution
+// ////////////////////////////
 
 
-console.log("////////////");
-console.log("NEW TIP CALCULATOR")
-console.log("////////////")
+// var bill = [124, 48, 268]
+// var afterTip = []
 
-newTipCalculator(bill[0])
-newTipCalculator(bill[1])
-newTipCalculator(bill[2])
+// function newTipCalculator(bill){
+//     var percentage;
+//     if(bill < 50){
+//         percentage = .2;
+//     } else if (bill >= 50 && bill <200){
+//         percentage = .15;
+//     } else if (bill >= 200){
+//         percentage = .1;
+//     }
+//     else{
+//         console.log("the budget is to large")
+//     }
+//     var tipAmount = (percentage * bill);
+//     afterTip.push(bill + tipAmount);
+//     console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
 
-console.log(bill)
-console.log(afterTip)
+// }
+
+
+// console.log("////////////");
+// console.log("NEW TIP CALCULATOR")
+// console.log("////////////")
+
+// newTipCalculator(bill[0])
+// newTipCalculator(bill[1])
+// newTipCalculator(bill[2])
+
+// console.log(bill)
+// console.log(afterTip)
+
+
+
+
+
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+// Beginning: JavaScript Objects & Properties
+////////////////////////////////////////////
+///////////////////////////////////////////
+// Order does not matter in an object
+///////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////
+// Initializing the Object using the object literal
+///////////////////////////////////////////////////
+// Which is the curly braches
+///////////////////////////////////////////////////
+var john = {
+    firstName: "John",
+    lastName: "Smith",
+    birthYear: 1990,
+    family: ["Jane", "Mark", "Bob", "Emily"],
+    job: "teacher",
+    isMarried: false
+
+};
+
+console.log(john);
+
+// Accessing a element from an object
+console.log(john.firstName);
+// Accessing an element from an object
+console.log(john["lastName"])
+
+// Yet another way
+var x = "birthYear"
+console.log(john[x])
+// When using this method notic that the 
+// variable x still contains the string birthYear
+console.log(x)
+
+
+//////////////////////////////////
+// Mutating the JavaScript Object
+//////////////////////////////////
+// Change new key value pairs
+//////////////////////////////////
+
+john.job = "designer"
+john["isMarried"] = true;
+console.log(john)
+
+
+
+//////////////////////////////////////
+// Initiating in New JAvaScript Object
+//////////////////////////////////////
+// Initializing the object with the new Object Syntax
+/////////////////////////////////////////
+// which is the new keyword
+///////////////////////////////////////////
+
+var jane = new Object();
+jane.firstName = "Jane";
+jane.birthYear = 1969;
+jane.lastName = "Smith";
+
+console.log(jane)
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+// End: JavaScript Objects & Properties
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Beginning: JavaScript Objects & Properties
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+// End: JavaScript Objects & Properties
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+
+
+
+
+
+//////////////////////////////////////
+//////////////////////////////////////
+// Coding Challenge #4: 
+//////////////////////////////////////
+//////////////////////////////////////
