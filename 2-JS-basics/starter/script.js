@@ -382,24 +382,92 @@
 // calculating the average
 
 
-var johnsTeamAverage = (89 + 120 + 103) / 3;
-var mikesTeamAverage = (116 + 94 + 123) / 3;
-var marysTeamAverage = (97 + 134 + 105) / 3;
+// var johnsTeamAverage = (89 + 120 + 103) / 3;
+// var mikesTeamAverage = (116 + 94 + 123) / 3;
+// var marysTeamAverage = (97 + 134 + 105) / 3;
 
 
-switch(true){
-    case johnsTeamAverage > mikesTeamAverage && johnsTeamAverage > marysTeamAverage:
-        console.log("John\'s team has a higher winning average with " + johnsTeamAverage + " points");
-        break;
-    case johnsTeamAverage < mikesTeamAverage && mikesTeamAverage > marysTeamAverage:
-        console.log("Mike\'s team has a higher winning average with " + mikesTeamAverage + " points");
-        break;
-    case johnsTeamAverage < marysTeamAverage && marysTeamAverage > mikesTeamAverage:
-        console.log("Mary\'s team has a higher winning average with " + marysTeamAverage + " points");
-        break;
-    case johnsTeamAverage === mikesTeamAverage && johnsTeamAverage === marysTeamAverage:
-        console.log("Mary, Mike, and John\'s team have the same winning average with " + marysTeamAverage + " points");
-        break;
-    default:
-        console.log("We can not determine the average.");
+// switch(true){
+//     case johnsTeamAverage > mikesTeamAverage && johnsTeamAverage > marysTeamAverage:
+//         console.log("John\'s team has a higher winning average with " + johnsTeamAverage + " points");
+//         break;
+//     case johnsTeamAverage < mikesTeamAverage && mikesTeamAverage > marysTeamAverage:
+//         console.log("Mike\'s team has a higher winning average with " + mikesTeamAverage + " points");
+//         break;
+//     case johnsTeamAverage < marysTeamAverage && marysTeamAverage > mikesTeamAverage:
+//         console.log("Mary\'s team has a higher winning average with " + marysTeamAverage + " points");
+//         break;
+//     case johnsTeamAverage === mikesTeamAverage && johnsTeamAverage === marysTeamAverage:
+//         console.log("Mary, Mike, and John\'s team have the same winning average with " + marysTeamAverage + " points");
+//         break;
+//     default:
+//         console.log("We can not determine the average.");
+// }
+
+
+/////////////////////////////////
+/////////////////////////////////
+// Functions
+/////////////////////////////////
+/////////////////////////////////
+
+
+function calculateAge(birthYear){
+return 2019 - birthYear;
 }
+var ageMike = calculateAge(1980);
+var ageJane = calculateAge(1999);
+var ageJohn = calculateAge(1990);
+
+console.log(ageJohn, ageMike, ageJane );
+
+// Calculate the retirement date using the age info
+
+function yearsUntilRetirement(year, firstName){
+// var age = calculateAge(year);
+    var retirement = 75 - year
+
+    if (retirement > 0 ){
+        return firstName + " can retire in " + (75 - year) + " years.";
+    }
+    else{
+       return  firstName + " has retired " + Math.abs(retirement) + " years ago.";
+    }
+
+
+
+   
+
+}
+
+var retireMike = yearsUntilRetirement(ageMike, "Mike")
+
+console.log("/////////")
+console.log( retireMike)
+
+
+
+//////////////
+//////////////
+// Another way to solve the same problem
+//////////////
+//////////////
+// function calculateAge(birthYear){
+//     return 2019 - birthYear;
+//     }
+//     var ageMike = calculateAge(1980);
+//     var ageJane = calculateAge(1999);
+//     var ageJohn = calculateAge(1990);
+    
+//     console.log(ageJohn, ageMike, ageJane );
+    
+    
+    
+//     function yearsUntilRetirement(year, firstName){
+//     var age = calculateAge(year);
+//     var retirement = 75 - age
+//     console.log(firstName + " retires in " + retirement + " years.")
+    
+//     }
+    
+//     var retireMike = yearsUntilRetirement(1980, "Mike")
