@@ -927,25 +927,25 @@
 
 
 
-var john = {
-    firstName: "John",
-    lastName: "Smith",
-    birthYear: 1992,
-    family: ["Jane", "Mark", "Bob", "Emily"],
-    job: "teacher",
-    isMarried: false,
-    // Here is the Object method
-    calcAge: function(){
-        //This keyword refers to the object that we are currently in which is John.
-        // Below: creating a new key value pair
-        // setting it to the sum of 2018 - john.birthYear
-        this.age = 2018 - this.birthYear;
-    }
+// var john = {
+//     firstName: "John",
+//     lastName: "Smith",
+//     birthYear: 1992,
+//     family: ["Jane", "Mark", "Bob", "Emily"],
+//     job: "teacher",
+//     isMarried: false,
+//     // Here is the Object method
+//     calcAge: function(){
+//         //This keyword refers to the object that we are currently in which is John.
+//         // Below: creating a new key value pair
+//         // setting it to the sum of 2018 - john.birthYear
+//         this.age = 2018 - this.birthYear;
+//     }
     
-};
+// };
 
 
-john.calcAge()
+// john.calcAge()
 
 // console.log(john.calcAge());
 
@@ -958,7 +958,7 @@ john.calcAge()
 // // Alternative way to do the same thing.
 // // john.age = john.calcAge();
 
-console.log(john)
+// console.log(john)
 
 
 
@@ -989,45 +989,345 @@ console.log(john)
 // finally calculate who has the greater bmi
 
 
-var john = {
-    fullName: "John Smith",
-    mass: 92, //kg
-    height: 1.95,
-    calcBMI: function(){
-        this.Bmi =  this.mass / (this.height * this.height );
-        return this.Bmi
-    }
-}
+// var john = {
+//     fullName: "John Smith",
+//     mass: 92, //kg
+//     height: 1.95,
+//     calcBMI: function(){
+//         this.Bmi =  this.mass / (this.height * this.height );
+//         return this.Bmi
+//     }
+// }
 
-var mark = {
-    fullName: "Mark Greene",
-    mass: 78, //kg
-    height: 1.69,
-    calcBMI: function(){
-        this.Bmi =  this.mass / (this.height * this.height );
-        return this.Bmi
-    }
-}
+// var mark = {
+//     fullName: "Mark Greene",
+//     mass: 78, //kg
+//     height: 1.69,
+//     calcBMI: function(){
+//         this.Bmi =  this.mass / (this.height * this.height );
+//         return this.Bmi
+//     }
+// }
 
-// Function Expression --> Does produce an  immediate results
-var whoseBmiIsHigher = function(){
-    // Some Script
-    if (mark.calcBMI() > john.calcBMI() && mark.calcBMI() != john.calcBMI()){
-        return(mark.fullName + "'s BMI is Higher than Mark\'s. " + mark.fullName  + "'s Bmi is " + Math.round(10 * mark.Bmi) / 10  )
-    } 
+// // Function Expression --> Does produce an  immediate results
+// var whoseBmiIsHigher = function(){
+//     // Some Script
+//     if (mark.calcBMI() > john.calcBMI() && mark.calcBMI() != john.calcBMI()){
+//         return(mark.fullName + "'s BMI is Higher than Mark\'s. " + mark.fullName  + "'s Bmi is " + Math.round(10 * mark.Bmi) / 10  )
+//     } 
     
-    else if (mark.calcBMI() < john.calcBMI() && mark.calcBMI() != john.calcBMI()) {
-        return(john.fullName + "'s BMI is Higher than Mark\'s. " + john.fullName  + "'s Bmi is " + Math.round(10 * john.Bmi) / 10  )
+//     else if (mark.calcBMI() < john.calcBMI() && mark.calcBMI() != john.calcBMI()) {
+//         return(john.fullName + "'s BMI is Higher than Mark\'s. " + john.fullName  + "'s Bmi is " + Math.round(10 * john.Bmi) / 10  )
+//     }
+//     else{
+//         return("They have the same BMI.")
+//     }
+// }
+
+
+// console.log(whoseBmiIsHigher())
+
+
+
+
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Beginning: JavaScript Loops & Iterations
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Allows you to automate repetative tasks
+/////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////
+// If Loop setup 
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// if (starting point; condition; iteration) { // some script}
+////////////////////////////////////////////////////////////////
+
+// initial starting poiint, 
+// then the condition that is evaluated to see if the next loop should be run.
+// for (var i = 0; i <= 10; i++ ){
+//     console.log(i)
+// }
+
+// i = 0, 0 < 10 is true, log i to console, i ++
+// i = 1, 1 < 10 is true, log i to console, i ++
+// i = 2, 2 < 10 is true, log i to console, i ++
+// ...
+// i = 9, 9 < 10 is true, log i to console, i ++
+// i = 10, 10 < 10 is FALSE, exit the loop!
+
+
+
+
+
+// var john = ["John", "Smith", 1990, "designer", false];
+
+// Iterating through an array to console.log each element
+// for (var i = 0; i < john.length; i++ ){
+//     console.log(john[i])
+// }
+
+
+
+/////////////////////////////////////////////
+// While Loop setup 
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// while (condition){ // some script}
+/////////////////////////////////////////////
+
+// var john = ["John", "Smith", 1990, "designer", false];
+
+// var i = 0;
+// while(i < john.length){
+//     console.log(john[i])
+//  i++
+// }
+
+
+////////////////////////////////////
+// continue and the break statements
+////////////////////////////////////
+
+
+// // Continue statement
+// var john = ["John", "Smith", 1990, "designer", false];
+
+// //Iterating through an array to console.log each element
+// for (var i = 0; i < john.length; i++ ){
+//     if (typeof john[i] !== "string"){
+//         console.log("We are in the if statement Block")
+//         console.log(john[i] + " is not a \"String\" so we will continue (or skip) to the next iteration")
+//         continue; // break exits the loop as soon as the condition of the instances are met
+//         // no script can be run after this point.
+
+//     } 
+//     // console.log("We are outside of the if statement")
+//     console.log(john[i]);
+// }
+
+
+
+// // Break statement
+// var john = ["John", "Smith", 1990, "designer", false];
+// for (var i = 0; i < john.length; i++ ){
+//     if (typeof john[i] !== "string"){
+//         console.log("We are in the if statement Block")
+//         console.log(john[i] + " is not a \"String\" so we will break out of the FOR loop")
+//         break; // break exits the loop as soon as the condition of the instances are met
+     
+//     } 
+//     // console.log("We are outside of the if statement")
+//     console.log(john[i]);
+// }
+
+
+
+
+// Looping backwards
+// I've iterated through the array in revers
+// var john = ["John", "Smith", 1990, "designer", false];
+
+// for (var i = john.length - 1; i < john.length && i >= 0; i--){
+// // console.log(i)
+//   console.log( "index " + i + " is " +  john[i])
+
+// }
+
+
+// refactored solution of the same code from above
+// var john = ["John", "Smith", 1990, "designer", false];
+
+// for (var i = john.length - 1; i >= 0; i--){
+// // console.log(i)
+//   console.log( "index " + i + " is " +  john[i])
+
+// }
+
+
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// Coding Challenge #5: Tip Calculator using objects as loop
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+
+// John has 5 restaurant [124, 48, 268, 180, 42]
+
+// [] John likes to tip 
+// [] 20% when the bill is less than 50
+// [] 15% when the bill is equal to 50 but less than 200
+// [] 10% when the bill is equal to 200 or more
+
+
+// [x] create an object with the array of bills 
+// [x] Add a method to iterates over the bill and calculate the tipAmount 
+// [x] store that tipAmount in an array
+// [x] then calculate the bills * tipAmount = afterTipAmount 
+// [x] the calculator should return a new arrayc ontaining the tips
+// [x] the calculator should also return an array containing  the afterTipAmount
+// [x] the the same for marks family using different rules
+// [] create a function that calcultes the average tip for earch family
+
+
+// get the sum of a families bill
+// divide that sum by the lenght of the array - 1
+// check to see if it is higher than the other families
+
+
+// for (var i = 0; i < x; i++){
+
+// }
+
+
+
+
+
+
+
+var johnRestaurants =  {
+    bills: [],
+    calcTip: function(){
+
+        
+        // created new Key value pairs
+        this.allTips = [];
+        this.afterTips = [];
+
+        // iterate over each element in this.bills
+        for (var i = 0; i < this.bills.length; i++){
+            // console.log(this.bills[i])
+            if (this.bills[i] < 50) {
+                var tipAmount = (this.bills[i] * 0.2);
+                this.allTips.push(Math.round(10 * tipAmount) / 10)
+                this.afterTips.push(this.bills[i] + tipAmount)
+                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+            }
+            else if (this.bills[i] >= 50 && this.bills[i] < 200 ){
+                var tipAmount = (this.bills[i] * 0.15);
+                this.allTips.push(Math.round(10 * tipAmount) / 10);
+                this.afterTips.push(this.bills[i] + tipAmount)
+                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+            }
+            else if (this.bills[i] >= 200){
+                var tipAmount = (this.bills[i] * 0.1);
+                this.allTips.push(Math.round(10 * tipAmount) / 10)
+                this.afterTips.push(this.bills[i] + tipAmount)
+                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+            }
+            else {
+            //    console.log("the budget is to large")
+            }
+        }
+        // console.log("Here are all of the tip amounts: " + this.allTips);
+        // console.log("Here are all of the after tip amounts: " + this.afterTips);
+
+        // console.log(this.allTips);
+        console.log(this.afterTips);
     }
-    else{
-        return("They have the same BMI.")
+
+}
+
+//
+
+
+var markRestaurants =  {
+    bills: [],
+    calcTip: function(){
+
+        
+        // created new Key value pairs
+        this.allTips = [];
+        this.afterTips = [];
+
+        // iterate over each element in this.bills
+        for (var i = 0; i < this.bills.length; i++){
+            // console.log(this.bills[i])
+            if (this.bills[i] < 100) {
+                var tipAmount = (this.bills[i] * 0.20);
+                this.allTips.push(Math.round(10 * tipAmount) / 10)
+                this.afterTips.push(this.bills[i] + tipAmount)
+                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+            }
+            else if (this.bills[i] >= 100 && this.bills[i] < 300 ){
+                var tipAmount = (this.bills[i] * 0.10);
+                this.allTips.push(Math.round(10 * tipAmount) / 10);
+                this.afterTips.push(this.bills[i] + tipAmount)
+                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+            }
+            else if (this.bills[i] >= 300){
+                var tipAmount = (this.bills[i] * 0.25);
+                this.allTips.push(Math.round(10 * tipAmount) / 10)
+                this.afterTips.push(this.bills[i] + tipAmount)
+                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+            }
+            else {
+            //    console.log("the budget is to large")
+            }
+        }
+        // console.log("Here are all of the tip amounts: " + this.allTips);
+        // console.log("Here are all of the after tip amounts: " + this.afterTips);
+
+        // console.log(this.allTips);
+        console.log(this.afterTips);
     }
+
 }
 
 
-console.log(whoseBmiIsHigher())
+johnRestaurants.bills.push( 124, 48, 268, 180, 42)
+johnRestaurants.calcTip()
+
+
+markRestaurants.bills.push(77, 375, 110, 45)
+markRestaurants.calcTip()
 
 
 
 
 
+var marksBills = markRestaurants.afterTips
+var johnsBills = johnRestaurants.afterTips
+
+var calAverage = function(marksBills, johnsBills){
+    
+    var markSum = 0;
+    var johnSum = 0;
+
+    // iterate through array 1
+    // for each element add it to the element after it
+    // take the sum and compare it with the sum of element 2
+
+    for (var i = 0; i < marksBills.length ; i++) {
+        markSum += marksBills[i];
+    }
+
+    for (var i = 0; i < johnsBills.length ; i++) {
+        johnSum += johnsBills[i];
+    }
+
+    
+
+    markAverage = Math.round(10 * (markSum / marksBills.length)) / 10
+    johnAverage = Math.round(10 * (johnSum / johnsBills.length)) / 10
+
+    console.log(markSum);
+    console.log(johnSum);
+    whichBillIsGreater = markAverage > johnAverage ? console.log("Mark\'s bill is $" + markAverage + ". Which is greater than John\'s. $" + johnAverage) : console.log("John\'s bill is $" + johnAverage + ". Which is greater than Mark\'s $" + mamarkAveragerkSum);
+}
+
+calAverage(marksBills, johnsBills)
+
+
+
+
+// 
