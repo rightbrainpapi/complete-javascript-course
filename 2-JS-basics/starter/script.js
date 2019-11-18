@@ -1297,14 +1297,14 @@ markRestaurants.calcTip()
 
 
 
-// This currently calulates the total price.
+// This currently calulates the average Tip amount.
 // To calculate & compare the tip amounts 
-// Change .afterTips to .allTips
+// Change .afterTips to .allTips to .afterTips
 
-var marksBills = markRestaurants.afterTips // <--- -Here 
-var johnsBills = johnRestaurants.afterTips // <--- -Here
+var marksTips = markRestaurants.allTips // <--- -Here 
+var johnsTips = johnRestaurants.allTips // <--- -Here
 
-var calAverage = function(marksBills, johnsBills){
+var calAverage = function(marksTips, johnsTips){
     
     var markSum = 0;
     var johnSum = 0;
@@ -1313,28 +1313,31 @@ var calAverage = function(marksBills, johnsBills){
     // for each element add it to the element after it
     // take the sum and compare it with the sum of element 2
 
-    for (var i = 0; i < marksBills.length ; i++) {
-        markSum += marksBills[i];
+    for (var i = 0; i < marksTips.length ; i++) {
+        markSum += marksTips[i];
     }
 
-    for (var i = 0; i < johnsBills.length ; i++) {
-        johnSum += johnsBills[i];
+    for (var i = 0; i < johnsTips.length ; i++) {
+        johnSum += johnsTips[i];
     }
 
     
 
-    markAverage = Math.round(10 * (markSum / marksBills.length)) / 10
-    johnAverage = Math.round(10 * (johnSum / johnsBills.length)) / 10
+var markAverage = Math.round(10 * (markSum / marksTips.length)) / 10
+var johnAverage = Math.round(10 * (johnSum / johnsTips.length)) / 10
 
+
+
+    markRestaurants.averageTips = markAverage
+    johnRestaurants.averageTips = johnAverage
+    
     console.log(markSum);
     console.log(johnSum);
-    whichBillIsGreater = markAverage > johnAverage ? console.log("Mark\'s bill is $" + markAverage + ". Which is greater than John\'s. $" + johnAverage) : console.log("John\'s bill is $" + johnAverage + ". Which is greater than Mark\'s $" + mamarkAveragerkSum);
+    whichBillIsGreater = markAverage > johnAverage ? console.log("Mark\'s tip average is $" + markAverage + ". Which is greater than John\'s. $" + johnAverage) : console.log("John\'s tip average is $" + johnAverage + ". Which is greater than Mark\'s $" + mamarkAveragerkSum);
 }
 
 
-calAverage(marksBills, johnsBills)
+calAverage(marksTips, johnsTips)
 
-
-
-
-// 
+console.log(markRestaurants)
+console.log(johnRestaurants)
