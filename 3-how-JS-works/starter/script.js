@@ -233,7 +233,7 @@
 // This will console log the window object. 
 // because the window object is the default object.
 ///////////////////////////////////////////////////
-// console.log(this)
+console.log(this)
 
 
 
@@ -244,11 +244,11 @@
 // window object. So the this keyword will point to
 // the window object.
 ///////////////////////////////////////////////////
-// calculateAge(1985)
-// function calculateAge(year){
-//     console.log(2016 - year);
-//     console.log(this); // <-- refers to the window object
-// }
+calculateAge(1985)
+function calculateAge(year){
+    console.log(2016 - year);
+    console.log(this); // <-- refers to the window object
+}
 
 
 ///////////////////////////////////////////////////
