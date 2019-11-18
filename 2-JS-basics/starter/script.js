@@ -1206,23 +1206,25 @@ var johnRestaurants =  {
         // iterate over each element in this.bills
         for (var i = 0; i < this.bills.length; i++){
             // console.log(this.bills[i])
-            if (this.bills[i] < 50) {
-                var tipAmount = (this.bills[i] * 0.2);
+                var bill = this.bills[i]
+
+            if (bill < 50) {
+                var tipAmount = (bill * 0.2);
                 this.allTips.push(Math.round(10 * tipAmount) / 10)
-                this.afterTips.push(this.bills[i] + tipAmount)
-                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+                this.afterTips.push(bill + tipAmount)
+                // console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
             }
-            else if (this.bills[i] >= 50 && this.bills[i] < 200 ){
-                var tipAmount = (this.bills[i] * 0.15);
+            else if (bill >= 50 && bill < 200 ){
+                var tipAmount = (bill * 0.15);
                 this.allTips.push(Math.round(10 * tipAmount) / 10);
-                this.afterTips.push(this.bills[i] + tipAmount)
-                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+                this.afterTips.push(bill + tipAmount)
+                // console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
             }
-            else if (this.bills[i] >= 200){
-                var tipAmount = (this.bills[i] * 0.1);
+            else if (bill >= 200){
+                var tipAmount = (bill * 0.1);
                 this.allTips.push(Math.round(10 * tipAmount) / 10)
-                this.afterTips.push(this.bills[i] + tipAmount)
-                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+                this.afterTips.push(bill + tipAmount)
+                // console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
             }
             else {
             //    console.log("the budget is to large")
@@ -1251,24 +1253,26 @@ var markRestaurants =  {
 
         // iterate over each element in this.bills
         for (var i = 0; i < this.bills.length; i++){
-            // console.log(this.bills[i])
-            if (this.bills[i] < 100) {
-                var tipAmount = (this.bills[i] * 0.20);
+            // console.log(bill)
+            var bill = this.bills[i]
+
+            if (bill < 100) {
+                var tipAmount = (bill * 0.20);
                 this.allTips.push(Math.round(10 * tipAmount) / 10)
-                this.afterTips.push(this.bills[i] + tipAmount)
-                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+                this.afterTips.push(bill + tipAmount)
+                // console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
             }
-            else if (this.bills[i] >= 100 && this.bills[i] < 300 ){
-                var tipAmount = (this.bills[i] * 0.10);
+            else if (bill >= 100 && bill < 300 ){
+                var tipAmount = (bill * 0.10);
                 this.allTips.push(Math.round(10 * tipAmount) / 10);
-                this.afterTips.push(this.bills[i] + tipAmount)
-                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+                this.afterTips.push(bill + tipAmount)
+                // console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
             }
-            else if (this.bills[i] >= 300){
-                var tipAmount = (this.bills[i] * 0.25);
+            else if (bill >= 300){
+                var tipAmount = (bill * 0.25);
                 this.allTips.push(Math.round(10 * tipAmount) / 10)
-                this.afterTips.push(this.bills[i] + tipAmount)
-                // console.log("The this.bills[i] was $" + this.bills[i] + " and the tip was $" + Math.round(10 * tipAmount) / 10);
+                this.afterTips.push(bill + tipAmount)
+                // console.log("The bill was $" + bill + " and the tip was $" + Math.round(10 * tipAmount) / 10);
             }
             else {
             //    console.log("the budget is to large")
@@ -1293,10 +1297,12 @@ markRestaurants.calcTip()
 
 
 
+// This currently calulates the total price.
+// To calculate & compare the tip amounts 
+// Change .afterTips to .allTips
 
-
-var marksBills = markRestaurants.afterTips
-var johnsBills = johnRestaurants.afterTips
+var marksBills = markRestaurants.afterTips // <--- -Here 
+var johnsBills = johnRestaurants.afterTips // <--- -Here
 
 var calAverage = function(marksBills, johnsBills){
     
@@ -1324,6 +1330,7 @@ var calAverage = function(marksBills, johnsBills){
     console.log(johnSum);
     whichBillIsGreater = markAverage > johnAverage ? console.log("Mark\'s bill is $" + markAverage + ". Which is greater than John\'s. $" + johnAverage) : console.log("John\'s bill is $" + johnAverage + ". Which is greater than Mark\'s $" + mamarkAveragerkSum);
 }
+
 
 calAverage(marksBills, johnsBills)
 
