@@ -15,7 +15,7 @@ GAME RULES:
 // var x = document.querySelector("#score-0").textContent;
 
 
-var scores, roundScore, activePlayer, gamePlaying; // <-- Game Playing is our state variable and it is set to true inside of the initializeNewGame function
+var scores, roundScore, previousRoll, activePlayer, gamePlaying; // <-- Game Playing is our state variable and it is set to true inside of the initializeNewGame function
 
 // The initializeNewGame() is declared below and is being called here.
 initializeNewGame();
@@ -39,12 +39,33 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
         // [x] update the round score
         //      - only if the number is not a 1
         //      - if number is a 1 the player's score gets wiped out
-        if (dice !== 1){
+
+        if ( dice === 6 ){
+            // store in previousRoll
+            previousRoll += dice;
+    
+            // placing the round score into the UI
+            document.querySelector("#current-" + activePlayer).textContent = roundScore;
+            // link to that player
+            // clear after two rolls
+            console.log("The dice is currently " + dice)
+            console.log("The current count of the previousRoll is now " + previousRoll)
+
+            // check to see if the dice roll amounts to 12
+            previousRoll === 12 ? nextPlayer() : roundScore += dice;
+        }
+
+        else if (dice !== 1 && dice !== 6){
             // add the score
             roundScore += dice;
             document.querySelector("#current-" + activePlayer).textContent = roundScore;
-        }  else {
-        // Move to the Next player
+            // resetting previousRoll when the number rolled is not a 1 or a 6
+            previousRoll = 0;
+            console.log("The current count of the previousRoll is now " + previousRoll)
+        }  
+        
+        else {
+        // Move to the Next player if it is a 1. when it moves to next player the value of previousRoll gets reset to 0
         nextPlayer();
 
        }
@@ -59,6 +80,7 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
 if(gamePlaying){
         // Add the current score to the Global score
             scores[activePlayer] += roundScore;
+            
 
         // Update the UI
 
@@ -101,6 +123,9 @@ function nextPlayer(){
  // when this player rolls the roundScore should start from 0
  roundScore = 0;
 
+ // resetting the previousRoll to zero when the player changes.
+ previousRoll = 0;
+
  document.getElementById("current-0").textContent = "0";
  document.getElementById("current-1").textContent = "0";
 
@@ -137,6 +162,7 @@ document.querySelector(".btn-new").addEventListener("click", initializeNewGame);
 function initializeNewGame(){
     scores = [0, 0];
     roundScore = 0;
+    previousRoll = 0;
     activePlayer = 0; 
     gamePlaying = true  
 
@@ -165,5 +191,20 @@ function initializeNewGame(){
 }
 
 
+////////////////////////////////////
+////////////////////////////////////
+//////// Coding challeng 6.1 ///////
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+// A player loses their entire score if they roll two sixes in a row
+// after that it is the next playe's turn 
+// (Hint: Always save the previos dice roll in a seperate variable)
+////////////////////////////////////
+// [x] Completed
+////////////////////////////////////
+
+
+   
 
 
