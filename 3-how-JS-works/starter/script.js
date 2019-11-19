@@ -290,3 +290,5 @@ var mike = {
 mike.calculateAge = john.calculateAge
 mike.calculateAge(); // <-- This proves that the this keyword is only assigned a value when the object called the method
 // It is made apparent because when the object is mike it console.logs mike and when it is john it consol.logs john
+
+
