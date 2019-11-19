@@ -9,28 +9,19 @@ GAME RULES:
 
 */
 
-
-
-
-
-
 // document.querySelector("#current-" + activePlayer).textContent = dice
 // document.querySelector("#current-" + activePlayer).innerHTML = "<em>" + dice + "</em>";
 // Grabs the id called score-0 and stores it in a variable called x
 // var x = document.querySelector("#score-0").textContent;
 
 
-var scores, roundScore, activePlayer, gamePlaying;
+var scores, roundScore, activePlayer, gamePlaying; // <-- Game Playing is our state variable and it is set to true inside of the initializeNewGame function
 
-// Game Playing is our state variable
-
+// The initializeNewGame() is declared below and is being called here.
 initializeNewGame();
 
-
-
-
-
-// Grabs the class called btn-roll add an click event listener on it that triggers the ananmous function
+// This function rolls the dice
+// Grabs the class called btn-roll add an click event listener on it that triggers the ananomous function
 document.querySelector(".btn-roll").addEventListener("click", function(){
     if (gamePlaying){
         // Do Something Here
@@ -52,11 +43,6 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
             // add the score
             roundScore += dice;
             document.querySelector("#current-" + activePlayer).textContent = roundScore;
-
-            // scores[activePlayer] += roundScore
-            // document.getElementById("score-0").textContent = roundScore
-            // console.log(roundScore)
-
         }  else {
         // Move to the Next player
         nextPlayer();
@@ -64,7 +50,6 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
        }
     }
 });
-
 
 
 
@@ -106,7 +91,6 @@ if(gamePlaying){
 
 });
 
-
 function nextPlayer(){
  // move on to the next player
  console.log("Next players turn");
@@ -140,8 +124,16 @@ function nextPlayer(){
 // When the button is pressed then call the initialize new game function
 document.querySelector(".btn-new").addEventListener("click", initializeNewGame);
 
-
-
+// Function Declarations are hoisted.
+// Because function declarations are hoisted the first time the program runs
+// it sets the global variables score, roundScore activePlayer and gamePlaying all to undefined 
+// (see: above where the global variables var score, roundScore, activePlayer, and gamePlaying are declared)
+// when the program gets called/ executed (see: above where initializeNewGame is called)
+// the variables inside of this function reset the global variables at the top of the page to 
+// their respective values. 
+// Because this is done all other functions are able to access the values of the global variables
+// it might look like the variables belong to this functions lexical scope but it does not.
+// the variables are simply being set.
 function initializeNewGame(){
     scores = [0, 0];
     roundScore = 0;
