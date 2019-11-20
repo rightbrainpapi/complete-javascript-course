@@ -22,7 +22,7 @@ Plus, I made all the [course slides available for download](slides-students-C03.
 
 ### Q4: You keep mentioning your resources page. Where can I find it?
 
-**A:** It's on my website at <http://codingheroes.io/resources>. You can subscribe for updates 😉
+**A:** It's on my website at <https://codingheroes.io/resources>. You can subscribe for updates 😉
 
 ### Q5: What Brackets and VSCode themes are you using?
 
@@ -30,7 +30,7 @@ Plus, I made all the [course slides available for download](slides-students-C03.
 
 ### Q6: Can I see a final version of the course projects?
 
-**A:** Sure, I have an online version of all three. Here they are: [Pig Game](https://piggame2.netlify.com/) (DOM manipulation), [Budgety](http://budgety2.netlify.com/) (advanced JavaScript) and [Forkify](https://forkify.netlify.com/) (modern JavaScript and AJAX).
+**A:** Sure, I have an online version of all three. Here they are: [Pig Game](https://piggame2.netlify.com/) (DOM manipulation), [Budgety](https://budgety2.netlify.com/) (advanced JavaScript) and [Forkify](https://forkify.netlify.com/) (modern JavaScript and AJAX).
 
 ### Q7: Videos don't load, can you fix it?
 
@@ -46,7 +46,7 @@ Plus, I made all the [course slides available for download](slides-students-C03.
 
 ### Q10: I love your courses and want to get updates on new courses. How?
 
-**A:** First, you can subscribe to my email list [at my website](http://codingheroes.io/newsletter). Plus, I make important announcements on twitter [@jonasschmedtman](https://twitter.com/jonasschmedtman), so you should definitely follow me there 🔥
+**A:** First, you can subscribe to my email list [at my website](https://codingheroes.io/newsletter). Plus, I make important announcements on twitter [@jonasschmedtman](https://twitter.com/jonasschmedtman), so you should definitely follow me there 🔥
 
 ### Q11: How do I get my certificate of completion?
 

@@ -15,10 +15,31 @@ GAME RULES:
 // var x = document.querySelector("#score-0").textContent;
 
 
-var scores, roundScore, previousRoll, activePlayer, gamePlaying; // <-- Game Playing is our state variable and it is set to true inside of the initializeNewGame function
+var scores, roundScore, previousRoll, scoreToWin, activePlayer, gamePlaying; // <-- Game Playing is our state variable and it is set to true inside of the initializeNewGame function
 
 // The initializeNewGame() is declared below and is being called here.
 initializeNewGame();
+
+var value = document.querySelector("#inputField").value
+
+
+
+ document.querySelector("#inputField").addEventListener("change", function(){
+    // console.log("This is working: " + this.value)
+    
+    if(isNaN(this.value)){
+        gamePlaying = false;
+        
+        console.log(this.value + " is not a number!")
+    }
+    else{
+        gamePlaying = true;
+        console.log(this.value + " is a number!")
+        scoreToWin = this.value
+    }
+ });
+
+
 
 // This function rolls the dice
 // Grabs the class called btn-roll add an click event listener on it that triggers the ananomous function
@@ -26,39 +47,102 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
     if (gamePlaying){
         // Do Something Here
         // [x] Random Number
-        var dice = Math.floor(Math.random() * 6 ) + 1;
-        console.log(dice);
+        var dice_0 = Math.floor(Math.random() * 6 ) + 1;
+        var dice_1 = Math.floor(Math.random() * 6 ) + 1;
+        // console.log("/////////////////////")
+        // console.log("/////////////////////")
+        // console.log("/////////////////////")
+        // console.log(dice_0);
+        // console.log(dice_1);
+        // console.log("/////////////////////")
+        // console.log("/////////////////////")
+        // console.log("/////////////////////")
+
        
         // [x] Display the result
         // setting display to block shows the block 
-        var  diceDom =  document.querySelector(".dice");
-        diceDom.style.display = "block";
-        diceDom.src = "dice-" + dice + ".png";
+        var  diceDom_0 =  document.querySelector(".dice-0");
+        diceDom_0.style.display = "block";
+        diceDom_0.src = "dice-" + dice_0 + ".png";
+
+
+        var  diceDom_1 =  document.querySelector(".dice-1");
+        diceDom_1.style.display = "block";
+        diceDom_1.src = "dice-" + dice_1 + ".png";
 
 
         // [x] update the round score
         //      - only if the number is not a 1
         //      - if number is a 1 the player's score gets wiped out
 
-        if ( dice === 6 ){
+        if ( (dice_0 === 6  || dice_1 === 6) && (dice_0 !== 1 && dice_1 !== 1)){
+            console.log("handling in if statement")
+            console.log(dice_0);
+            console.log(dice_1);
             // store in previousRoll
-            previousRoll += dice;
-    
-            // placing the round score into the UI
-            document.querySelector("#current-" + activePlayer).textContent = roundScore;
-            // link to that player
-            // clear after two rolls
-            console.log("The dice is currently " + dice)
-            console.log("The current count of the previousRoll is now " + previousRoll)
+            // previousRoll += dice;
 
-            // check to see if the dice roll amounts to 12
-            previousRoll === 12 ? nextPlayer() : roundScore += dice;
+
+
+            function updateAndMoveOn (){
+                    // adding 6 to previousRoll count
+                    previousRoll += 6;
+
+                    // adding to Round
+                    roundScore += dice_0 + dice_1
+
+                    // displaying the current round score to the little red box
+                    document.querySelector("#current-" + activePlayer).textContent = roundScore;
+
+                    // console log to see what the current previous roll count is 
+                    console.log("The current count of the previousRoll is now " + previousRoll);
+
+                    //
+            }
+
+                //Check if both dice are 6
+                if(dice_0 + dice_1 === 12){
+                    console
+                    // alert 
+                    // go to next player
+                    alert("You rolled a double 6")
+                    nextPlayer()
+                }
+                else if (dice_0 === 6 || dice_1 === 6){
+                    console.log("We are is the 6s else if statement adding previous count and updating red box")
+                    console.log("upon entry the current previousRoll count is " + previousRoll)
+                    // if the previous count is 6 go to next player 
+                    // otherwise its not 6 so i need you to update the previousRoll 
+                    // and the little red box
+                    previousRoll === 6 ? nextPlayer() : updateAndMoveOn ();
+                    // simplye checking what the count is.
+                    console.log("upon leaving the current previousRoll count is " + previousRoll)
+
+                    // Old problem resolved
+                    // Current problem/ when a user has rolled 2 6s back to back.
+                    // it goes to next player 
+                    // but it also gives the next player the points he rolled
+                    
+
+                }
+                else {
+
+                    updateAndMoveOn ()
+                }
+         
+       console.log("We are leaving the Larger if block");     
         }
 
-        else if (dice !== 1 && dice !== 6){
-            // add the score
-            roundScore += dice;
+        else if ((dice_0 !== 1 && dice_1 !== 1) && (dice_0 !== 6 && dice_1 !== 6)){
+            console.log("handling in else if statement");
+            console.log(dice_0);
+            console.log(dice_1);
+
+            roundScore += dice_0 + dice_1;
+
+            // add the score to the current score in red box
             document.querySelector("#current-" + activePlayer).textContent = roundScore;
+            
             // resetting previousRoll when the number rolled is not a 1 or a 6
             previousRoll = 0;
             console.log("The current count of the previousRoll is now " + previousRoll)
@@ -66,6 +150,7 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
         
         else {
         // Move to the Next player if it is a 1. when it moves to next player the value of previousRoll gets reset to 0
+        // alert("youve rolled a 1")
         nextPlayer();
 
        }
@@ -87,12 +172,13 @@ if(gamePlaying){
         document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer];
         // Check if there is a winner
 
-        if (scores[activePlayer] >= 20){
+        if (scores[activePlayer] >= scoreToWin){
             // tell them they've won
             console.log("You won");
             document.querySelector("#name-" + activePlayer).textContent = "You Won!"
             // document.querySelector(".btn-hold").classList.remove(".btn-hold");
-            document.querySelector(".dice").style.display = "none";
+            document.querySelector(".dice-0").style.display = "none";
+            document.querySelector(".dice-1").style.display = "none";
             document.querySelector(".player-" + activePlayer + "-panel").classList.add("winner");
             document.querySelector(".player-" + activePlayer + "-panel").classList.remove("active");
             gamePlaying = false;
@@ -142,7 +228,8 @@ function nextPlayer(){
 
 
  // hide the dice when a player rolls a 1
- document.querySelector(".dice").style.display = "none";
+ document.querySelector(".dice-0").style.display = "none";
+ document.querySelector(".dice-1").style.display = "none";
 
 }
 
@@ -165,9 +252,12 @@ function initializeNewGame(){
     previousRoll = 0;
     activePlayer = 0; 
     gamePlaying = true  
-
+    scoreToWin = 0
+    value = 0
+    // console.log(value)
     // Grabs the dice class and sets the style to none
-    document.querySelector(".dice").style.display = "none";
+    document.querySelector(".dice-0").style.display = "none";
+    document.querySelector(".dice-1").style.display = "none";
 
     // Sets the folowing text content to 0
     document.getElementById("score-0").textContent = "0";
@@ -204,7 +294,33 @@ function initializeNewGame(){
 // [x] Completed
 ////////////////////////////////////
 
+////////////////////////////////////
+////////////////////////////////////
+//////// Coding challeng 6.2 ///////
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+// A player can set the predefined winning score 
+// using an input field that is located in the UI
+// (Hint: You can read the value with .value property in javaScript)
+////////////////////////////////////
+// [] Completed
+////////////////////////////////////
 
+
+
+////////////////////////////////////
+////////////////////////////////////
+//////// Coding challeng 6.3 ///////
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+// Add a second dice to the game
+// The player loses his current score if one of the dice is 1
+// (Hint: You will need CSS to position the second dice)
+////////////////////////////////////
+// [] Completed
+////////////////////////////////////
    
 
 
