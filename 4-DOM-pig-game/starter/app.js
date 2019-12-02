@@ -20,11 +20,11 @@ var scores, roundScore, previousRoll, scoreToWin, activePlayer, gamePlaying; // 
 // The initializeNewGame() is declared below and is being called here.
 initializeNewGame();
 
-var value = document.querySelector("#inputField").value
+var value = document.querySelector(".final-score").value
+console.log(value)
 
 
-
- document.querySelector("#inputField").addEventListener("change", function(){
+ document.querySelector(".final-score").addEventListener("change", function(){
     // console.log("This is working: " + this.value)
     
     if(isNaN(this.value)){
